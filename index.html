@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRPC Shift Formation</title>
+    <link rel="shortcut icon" href="#"><!-- fix favicon.ico -->
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <aside class="hud is-collapsed" id="hudPanel">
+        <div class="hud-details" id="hudDetails">
+            <div class="eyebrow">IRPC PLBG formation</div>
+            <h1 class="title">Random Walk to Shift Assembly</h1>
+            <p id="statusText" class="status-text">Preparing roster and scene.</p>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <span>Total</span>
+                    <strong id="statTotal">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Supervisors</span>
+                    <strong id="statSupervisor">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Team Leads</span>
+                    <strong id="statTeamLeader">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Operators</span>
+                    <strong id="statOperator">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Day Time</span>
+                    <strong id="statDaytime">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls controls-compact">
+            <button id="assembleBtn" class="btn" type="button" aria-label="Assemble" title="Assemble">Assemble</button>
+            <button id="roamBtn" class="btn" type="button">Random Walk</button>
+            <button id="resetBtn" class="btn btn-reset" type="button" aria-label="Reset" title="Reset">Reset</button>
+            <button id="pauseBtn" class="btn" type="button" aria-label="Pause" title="Pause">Pause</button>
+            <button id="statsBtn" class="btn" type="button">Stats</button>
+            <button id="panelToggleBtn" class="btn btn-toggle" type="button" aria-expanded="false">Show Info</button>
+        </div>
+    </aside>
+
+    <section id="perfPanel" class="perf-panel" aria-live="polite">
+        <h2 class="perf-title">Runtime Stats</h2>
+        <div class="perf-row"><span class="perf-label">Geometries</span><span id="perfGeometries" class="perf-value">0</span></div>
+        <div class="perf-row"><span class="perf-label">Textures</span><span id="perfTextures" class="perf-value">0</span></div>
+        <div class="perf-row"><span class="perf-label">Draw Calls</span><span id="perfDrawCalls" class="perf-value">0</span></div>
+        <div class="perf-row"><span class="perf-label">Triangles</span><span id="perfTriangles" class="perf-value">0</span></div>
+        <div class="perf-row"><span class="perf-label">Est. VRAM</span><span id="perfVram" class="perf-value">0 MB</span></div>
+    </section>
+
+    <main id="viewport" aria-label="Three.js scene"></main>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
